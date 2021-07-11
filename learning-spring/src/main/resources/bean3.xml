@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 代码部分是内部注入 注释部分是级联赋值 两者作用一致 -->
+    <bean id="emp" class="com.katus.bean.Emp">
+        <property name="name" value="Sun"/>
+        <property name="gender" value="male"/>
+<!--        <property name="dept" ref="dept"/>-->
+        <property name="dept">
+            <bean class="com.katus.bean.Dept">
+                <property name="name" value="Security"/>
+            </bean>
+        </property>
+    </bean>
+<!--    <bean id="dept" class="com.katus.bean.Dept">-->
+<!--        <property name="name" value="Money"/>-->
+<!--    </bean>-->
+
+    <!-- 另一种内部注入方式 -->
+<!--    <bean id="emp" class="com.katus.bean.Emp">-->
+<!--        <property name="name" value="Sun"/>-->
+<!--        <property name="gender" value="male"/>-->
+<!--        <property name="dept" ref="dept"/>-->
+<!--        &lt;!&ndash; 要求有getDept方法 &ndash;&gt;-->
+<!--        <property name="dept.name" value="Hello"/>-->
+<!--    </bean>-->
+<!--    <bean id="dept" class="com.katus.bean.Dept"/>-->
+</beans>

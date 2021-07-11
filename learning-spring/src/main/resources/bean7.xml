@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  自动装配 按照名称 需要id与成员变量名一致 按照类型 需要同类型的bean只有一个  -->
+    <bean id="emp" class="com.katus.bean.Emp" autowire="byName">
+        <property name="name" value="Sun"/>
+        <property name="gender" value="male"/>
+    </bean>
+    <bean id="dept" class="com.katus.bean.Dept"/>
+</beans>

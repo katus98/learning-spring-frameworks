@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- 公共名称空间 -->
+    <util:list id="deptList">
+        <value>膜李浩悦</value>
+        <value>膜万神</value>
+        <value>膜竺院大佬</value>
+    </util:list>
+
+    <bean id="coll" class="com.katus.bean.CollectionTest">
+        <property name="array">
+            <array>
+                <value>first</value>
+                <value>second</value>
+            </array>
+        </property>
+        <!-- 注入公共名称空间 -->
+        <property name="list" ref="deptList"/>
+        <property name="map">
+            <map>
+                <entry key="name" value="Sun"/>
+                <entry key="gender" value="male"/>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>MySQL</value>
+                <value>Others</value>
+            </set>
+        </property>
+        <property name="deptList">
+            <list>
+                <ref bean="d1"/>
+                <ref bean="d2"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="d1" class="com.katus.bean.Dept">
+        <property name="name" value="d1"/>
+    </bean>
+    <bean id="d2" class="com.katus.bean.Dept">
+        <property name="name" value="d2"/>
+    </bean>
+</beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 集合 数组 对象属性的注入方法 -->
+    <bean id="coll" class="com.katus.bean.CollectionTest">
+        <property name="array">
+            <array>
+                <value>first</value>
+                <value>second</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>ele1</value>
+                <value>ele2</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="name" value="Sun"/>
+                <entry key="gender" value="male"/>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>MySQL</value>
+                <value>Others</value>
+            </set>
+        </property>
+        <property name="deptList">
+            <list>
+                <ref bean="d1"/>
+                <ref bean="d2"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="d1" class="com.katus.bean.Dept">
+        <property name="name" value="d1"/>
+    </bean>
+    <bean id="d2" class="com.katus.bean.Dept">
+        <property name="name" value="d2"/>
+    </bean>
+</beans>

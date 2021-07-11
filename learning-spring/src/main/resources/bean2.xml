@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--外部Bean注入属性 scope区分单例还是多例 默认单例不写-->
+    <!-- scope: prototype 多实例 getBean方法调用时才会创建对象 -->
+    <!-- scope: singleton 单实例 ApplicationContext构造时即创建对象 -->
+    <bean id="userService" class="com.katus.service.UserService" scope="prototype">
+        <!-- 注入对象属性 ref标签值和对象实现类bean的id一致 -->
+        <property name="userDao" ref="userDaoImpl"/>
+    </bean>
+    <bean id="userDaoImpl" class="com.katus.dao.impl.UserDaoImpl"/>
+</beans>

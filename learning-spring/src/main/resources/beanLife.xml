@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="order" class="com.katus.bean.Order" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="id" value="0001"/>
+        <property name="desc" value="something"/>
+    </bean>
+
+    <!-- 给当前配置文件所有的bean添加后置处理器 -->
+    <bean id="pro" class="com.katus.processor.PostProcessor"/>
+</beans>

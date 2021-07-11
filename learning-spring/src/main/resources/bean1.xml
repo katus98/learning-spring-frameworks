@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- IOC管理 创建对象 基于xml的方式创建对象 -->
+    <!--  默认使用无参构造器  -->
+    <bean id="user" class="com.katus.bean.User">
+        <!-- 使用set方法进行属性注入 -->
+        <property name="name" value="Sun"/>
+        <property name="age" value="22"/>
+        <!-- 设置null值 -->
+        <property name="address">
+            <null/>
+        </property>
+        <!-- 设置特殊符号 另外也可以使用转义 -->
+        <property name="desc">
+            <value><![CDATA[<北京>是一座城市/别这样\什么符号都可以]]></value>
+        </property>
+    </bean>
+    <!--  使用有参构造器构造  -->
+    <bean id="book" class="com.katus.bean.Book">
+        <!-- 构造器参数指定 通过参数名称 -->
+        <constructor-arg name="name" value="Success"/>
+        <!-- 构造器参数指定 通过参数列表索引值 -->
+        <constructor-arg index="1" value="Zhang"/>
+    </bean>
+    <!-- P名称 属性注入方式 要求有对应的set方法 -->
+    <bean id="order" class="com.katus.bean.Order" p:id="0001" p:desc="The first."/>
+</beans>

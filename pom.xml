@@ -6,11 +6,21 @@
 
     <groupId>com.katus</groupId>
     <artifactId>learning-spring-frameworks</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0</version>
+    <modules>
+        <module>learning-spring</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <spring.version>5.2.8.RELEASE</spring.version>
+        <junit.version>4.13</junit.version>
+        <druid.version>1.1.22</druid.version>
+        <mysql.version>8.0.21</mysql.version>
     </properties>
 
 </project>

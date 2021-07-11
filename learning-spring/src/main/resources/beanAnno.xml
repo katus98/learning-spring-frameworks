@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.katus"/>
+
+    <!-- 不使用默认过滤器 只扫描Service注解 -->
+<!--    <context:component-scan base-package="com.katus" use-default-filters="false">-->
+<!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+<!--    </context:component-scan>-->
+
+    <!-- 使用默认过滤器 但是Service注解除外 -->
+<!--    <context:component-scan base-package="com.katus">-->
+<!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+<!--    </context:component-scan>-->
+</beans>
