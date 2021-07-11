@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.katus"/>
+    <!-- 配置视图解析器对象 -->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!-- 配置自定义类型转换器 在原有的基础上修改 -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.katus.utils.StringToDataConverter"/>
+            </set>
+        </property>
+    </bean>
+    <!-- 配置静态资源不会被拦截器拦截 为什么不生效????!!!! -->
+    <mvc:resources mapping="js/**" location="/js/"/>
+    <mvc:resources mapping="css/**" location="/css/"/>
+    <mvc:resources mapping="img/**" location="/img/"/>
+    <!-- 配置没有处理的请求直接使用默认设置 即在静态目录下寻找 -->
+<!--    <mvc:default-servlet-handler/>-->
+    <!-- 配置文件解析器对象 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+    <!-- 配置异常处理器对象 -->
+    <bean id="myExceptionResolver" class="com.katus.exception.MyExceptionResolver"/>
+    <!-- 配置多个自定义拦截器 -->
+    <mvc:interceptors>
+        <!-- 配置其中一个自定义拦截器 -->
+        <mvc:interceptor>
+            <!-- 配置拦截器请求路径 -->
+            <mvc:mapping path="/user/*"/>
+            <!-- 配置拦截器类 -->
+            <bean id="myInterceptor1" class="com.katus.interceptor.MyInterceptor1"/>
+        </mvc:interceptor>
+        <!-- 配置其中一个自定义拦截器 -->
+        <mvc:interceptor>
+            <!-- 配置拦截器请求路径 -->
+            <mvc:mapping path="/**"/>
+            <!-- 配置拦截器类 -->
+            <bean id="myInterceptor2" class="com.katus.interceptor.MyInterceptor2"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    <!-- 开启SpringMVC注解支持 注册自定义类型转换器 -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+</beans>
