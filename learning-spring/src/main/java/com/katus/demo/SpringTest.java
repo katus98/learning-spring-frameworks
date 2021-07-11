@@ -4,7 +4,7 @@ import com.katus.bean.Book;
 import com.katus.bean.User;
 import com.katus.bean.Emp;
 import com.katus.service.UserService;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 

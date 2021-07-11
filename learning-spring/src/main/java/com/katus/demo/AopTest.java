@@ -2,7 +2,7 @@ package com.katus.demo;
 
 import com.katus.aopanno.User;
 import com.katus.config.AopConfig;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
