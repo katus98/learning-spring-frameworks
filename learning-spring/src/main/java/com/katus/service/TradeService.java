@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 import java.io.IOException;
 
 /**
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-26
  */
 @Service

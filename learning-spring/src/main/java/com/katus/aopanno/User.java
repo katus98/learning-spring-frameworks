@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 被代理类
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-26
  */
 @Component

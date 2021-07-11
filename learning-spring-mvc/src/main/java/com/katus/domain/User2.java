@@ -3,7 +3,7 @@ package com.katus.domain;
 import java.io.Serializable;
 
 /**
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-30
  */
 public class User2 implements Serializable {

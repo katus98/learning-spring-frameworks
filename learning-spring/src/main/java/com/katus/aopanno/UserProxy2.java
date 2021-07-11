@@ -6,7 +6,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-26
  */
 @Component

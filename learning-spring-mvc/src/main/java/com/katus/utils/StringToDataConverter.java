@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-29
  */
 public class StringToDataConverter implements Converter<String, Date> {

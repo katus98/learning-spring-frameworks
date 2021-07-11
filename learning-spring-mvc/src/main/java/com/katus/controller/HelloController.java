@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * 快速入门测试
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-29
  */
 @Controller

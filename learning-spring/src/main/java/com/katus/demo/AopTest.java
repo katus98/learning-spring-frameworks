@@ -8,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-26
  */
 public class AopTest {

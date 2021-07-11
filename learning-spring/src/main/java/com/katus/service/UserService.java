@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 /**
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-25
  */
 // value 可以省略 默认值是类名首字母小写 效果等同于bean标签里的id属性值 以下四个标签在创建对象实例时作用一致

@@ -3,7 +3,7 @@ package com.katus.dao.impl;
 import com.katus.dao.UserDao;
 
 /**
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-25
  */
 public class UserDaoImpl implements UserDao {

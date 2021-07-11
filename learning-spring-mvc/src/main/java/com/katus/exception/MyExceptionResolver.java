@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 自定义异常处理器
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-30
  */
 public class MyExceptionResolver implements HandlerExceptionResolver {

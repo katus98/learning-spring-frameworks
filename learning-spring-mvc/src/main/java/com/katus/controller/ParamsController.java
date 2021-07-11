@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 请求参数绑定测试
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-29
  */
 @Controller

@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.springframework.context.support.GenericApplicationContext;
 
 /**
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-26
  */
 public class SpringTest3 {

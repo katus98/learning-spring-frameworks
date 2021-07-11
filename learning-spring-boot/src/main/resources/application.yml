@@ -1,0 +1,50 @@
+# 配置文件路径优先级 file:./config > file:./ > classpath:./config > classpath:./
+server:
+  port: 8080
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+server:
+  port: 8081
+# 通过配置debug为true在控制台输出自动配置报告 查看自动配置类的生效与否
+#debug: true
+# 设置输出日志的级别 日志文件输出位置 文件名(默认spring.log) 两者冲突
+# 自定义日志在控制台、文件中输出的格式
+#logging:
+#  level: {com.katus: trace}
+#  file:
+#    path: log
+#    name: myLog.log
+#  pattern:
+#    console: ...
+#    file: ...
+---
+spring:
+  profiles: prod
+server:
+  port: 80
+---
+#person:
+#  last-name: Sun
+#  age: 22
+#  boss: true
+#  birth: 2020/8/27
+#  map: {k1: v1, k2: v2}
+#  list: [Spring, SpringBoot, Spark, Hadoop, Storm, Java, Scala]
+#  dog:
+#    name: doge
+#    age: 5
+
+#person:
+#  name: SunKatus
+#  desc: "555\n666"
+#  des: '666\n666'
+#friends: { name: ZhangSan, age: 46 }
+#pet:
+#  - dog
+#  - cat
+#  - pig
+#team: [Li, Wan, Zhu]

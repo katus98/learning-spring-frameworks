@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * 常用注解测试
- * @author Keran Sun (katus)
+ * @author SUN Katus
  * @version 1.0, 2020-08-29
  */
 @Controller
