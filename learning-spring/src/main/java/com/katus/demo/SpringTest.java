@@ -6,6 +6,7 @@ import com.katus.bean.Emp;
 import com.katus.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
@@ -68,8 +69,8 @@ public class SpringTest {
     @Test
     public void testLife() {
         // 加载Spring配置文件 创建单例bean对象 第四步
-        FileSystemXmlApplicationContext context =
-                new FileSystemXmlApplicationContext("D:\\Codes\\spring-learning\\src\\main\\resources\\beanLife.xml");
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("classpath:beanLife.xml");
 
         System.out.println(context.getBean("order"));
 

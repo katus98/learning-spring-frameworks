@@ -10,13 +10,13 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 public class PostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {   // life第三步前
-        System.out.println("postProcessBeforeInitialization run...");
+        System.out.println("BeanPostProcessor.postProcessBeforeInitialization:");
         return null;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {   // life第三步后
-        System.out.println("postProcessAfterInitialization run...");
+        System.out.println("BeanPostProcessor.postProcessAfterInitialization:");
         return null;
     }
 }
