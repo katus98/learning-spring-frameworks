@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  Bean模板, 本身不能实例化, 作为其他bean子类的值模板  -->
+    <bean id="beanTeamplate" abstract="true">
+        <property name="msg1" value="Hello World!" />
+        <property name="msg2" value="Hello World2!" />
+        <property name="msg3" value="Hello World3!" />
+    </bean>
+    <bean id="c1" class="com.katus.bean.HelloChina" parent="beanTeamplate">
+        <property name="msg1" value="Hello China!" />
+        <property name="msg2" value="Hello China!" />
+    </bean>
+    <bean id="world" class="com.katus.bean.HelloWorld">
+        <property name="msg1" value="Hello World xxx!" />
+        <property name="msg2" value="Hello World xxx 2!" />
+    </bean>
+    <!--  继承自其他Bean  -->
+    <bean id="c2" class="com.katus.bean.HelloChina" parent="world">
+        <property name="msg2" value="Hello China xxx!" />
+        <property name="msg3" value="Hello China xxx 2!" />
+    </bean>
+</beans>

@@ -76,4 +76,16 @@ public class SpringTest {
 
         context.close();   // 调用destroy方法 第五步
     }
+
+    @Test
+    public void testInheritance() {
+        // 加载Spring配置文件 创建单例bean对象 第四步
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("classpath:beanInheritance.xml");
+
+        System.out.println(context.getBean("c1"));
+        System.out.println(context.getBean("c2"));
+
+        context.close();   // 调用destroy方法 第五步
+    }
 }
