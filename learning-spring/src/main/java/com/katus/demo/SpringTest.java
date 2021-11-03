@@ -50,11 +50,11 @@ public class SpringTest {
 
     @Test
     public void testColl() {
-        // 加载Spring配置文件
-        ApplicationContext context =
-                new FileSystemXmlApplicationContext("D:\\Codes\\spring-learning\\src\\main\\resources\\bean5.xml");
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("classpath:beanCollection.xml");
 
         System.out.println(context.getBean("coll"));
+        context.close();
     }
 
     @Test
@@ -79,13 +79,12 @@ public class SpringTest {
 
     @Test
     public void testInheritance() {
-        // 加载Spring配置文件 创建单例bean对象 第四步
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("classpath:beanInheritance.xml");
 
         System.out.println(context.getBean("c1"));
         System.out.println(context.getBean("c2"));
 
-        context.close();   // 调用destroy方法 第五步
+        context.close();
     }
 }
