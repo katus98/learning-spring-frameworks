@@ -11,12 +11,12 @@ public class PostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {   // life第三步前
         System.out.println("BeanPostProcessor.postProcessBeforeInitialization:");
-        return null;
+        return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {   // life第三步后
         System.out.println("BeanPostProcessor.postProcessAfterInitialization:");
-        return null;
+        return bean;
     }
 }
