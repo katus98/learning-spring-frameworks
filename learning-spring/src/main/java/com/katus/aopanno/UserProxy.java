@@ -14,9 +14,9 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Order(0)   // 设置增强优先级 数字从0开始 越小优先级越高
 public class UserProxy {
-    // 公共切入点抽取 方便维护
+    // 公共切入点抽取 方便维护, 方法必须是private
     @Pointcut(value = "execution(* com.katus.aopanno.User.add(..))")
-    public void point() {}
+    private void point() {}
 
     // 前置通知 无论如何都会执行
     @Before(value = "point()")
