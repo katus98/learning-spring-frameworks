@@ -12,76 +12,82 @@
     <artifactId>learning-spring</artifactId>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-expression -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>${druid.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
     </dependencies>
 </project>
