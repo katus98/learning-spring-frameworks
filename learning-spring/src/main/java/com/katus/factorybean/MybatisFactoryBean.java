@@ -13,15 +13,15 @@ import org.springframework.beans.factory.FactoryBean;
  */
 public class MybatisFactoryBean<T> implements FactoryBean<T> {
     @Setter
-    private Class<T> clazz;
+    private Class<T> mapperInterface;
 
     @Override
     public T getObject() throws Exception {
-        return new MybatisAppTest().generateDao(clazz);
+        return new MybatisAppTest().generateDao(mapperInterface);
     }
 
     @Override
     public Class<T> getObjectType() {
-        return clazz;
+        return mapperInterface;
     }
 }

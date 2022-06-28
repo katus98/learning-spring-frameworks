@@ -6,6 +6,6 @@
 
     <!--  注册一个MybatisFactoryBean用于将Mybatis生成的对象注册到Spring容器里  -->
     <bean id="modelClassDao" class="com.katus.factorybean.MybatisFactoryBean">
-        <property name="clazz" value="com.katus.dao.ModelClassDao"/>
+        <property name="mapperInterface" value="com.katus.dao.ModelClassDao"/>
     </bean>
 </beans>
