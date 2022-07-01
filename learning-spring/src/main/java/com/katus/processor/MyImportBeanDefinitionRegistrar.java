@@ -2,6 +2,7 @@ package com.katus.processor;
 
 import com.katus.config.MyScan;
 import com.katus.factorybean.MybatisFactoryBean;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -21,12 +22,14 @@ import java.util.Optional;
  * @author SUN Katus
  * @version 1.0, 2022-06-28
  */
+@Slf4j
 public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
     /**
      * 回调方法允许用户向Spring BeanDefinition Map中注册新的 BeanDefinition
      */
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
+        log.info("ImportBeanDefinitionRegistrar.registerBeanDefinitions()......");
         // 获取MyScan注解上的参数
         MergedAnnotation<MyScan> annotation = importingClassMetadata.getAnnotations().get(MyScan.class);
         Optional<Object> pakOpt = annotation.getValue("value");
@@ -34,6 +37,7 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
         if (pakOpt.isPresent()) {
             pak = (String) pakOpt.get();
         }
+        log.info("MyScan: value = {}", pak);
         // 根据包名扫描类, 形成mapper类的List
         List<Class> list = new ArrayList<>();
         // 批量注册mapper
@@ -47,6 +51,6 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
             registry.registerBeanDefinition(mapperClass.getSimpleName(), beanDefinition);
         }
         // 移除旧的BeanDefinition
-        registry.removeBeanDefinition("name");
+        // registry.removeBeanDefinition("name");
     }
 }

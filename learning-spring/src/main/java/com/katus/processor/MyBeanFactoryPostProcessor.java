@@ -1,9 +1,10 @@
 package com.katus.processor;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.stereotype.Component;
 
 /**
  * BeanFactory后置处理器
@@ -12,6 +13,8 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
  * @author SUN Katus
  * @version 1.0, 2022-06-28
  */
+@Slf4j
+@Component
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     /**
      * Bean初始化之前的回调, 即Spring完成类扫描和BeanDefinition生成之后
@@ -22,8 +25,9 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         // 此处修改了名称为name的BeanDefinition中的Bean类名
-        BeanDefinition definition = beanFactory.getBeanDefinition("name");
-        definition.setBeanClassName("com...");
+        // BeanDefinition definition = beanFactory.getBeanDefinition("name");
+        // definition.setBeanClassName("com...");
         // 但是这个回调无法新增或者删除BeanDefinition
+        log.info("BeanFactoryPostProcessor.postProcessBeanFactory()......");
     }
 }

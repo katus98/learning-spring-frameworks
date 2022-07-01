@@ -52,6 +52,21 @@ public class MybatisSpringAppTest {
     @Test
     public void testRealCombine() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MybatisConfig.class);
+        /*
+        容器初始化流程
+        注册Spring内部自用类
+        注册主配置类
+        扫描自定义类
+        @Import ImportBeanDefinitionRegistrar回调
+        BeanFactoryPostProcessor回调
+        实例化Bean
+        Bean依赖注入(getBean递归获取)
+        aware回调
+        BeanPostProcessor初始化前回调
+        初始化方法
+        BeanPostProcessor初始化后回调
+        放入单例池
+         */
         ModelClassService service = context.getBean(ModelClassService.class);
         log.info("{}", service.queryAll());
         context.close();

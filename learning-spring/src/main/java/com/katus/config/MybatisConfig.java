@@ -19,6 +19,7 @@ import javax.sql.DataSource;
 @ComponentScan("com.katus")
 // @MapperScan("com.katus.dao")
 @ImportResource("classpath:MybatisConfig.xml")
+@MyScan("com.katus.dao")
 public class MybatisConfig {
     @Bean
     public DataSource dataSource() {
