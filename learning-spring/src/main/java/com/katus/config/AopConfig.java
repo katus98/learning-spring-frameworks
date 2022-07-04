@@ -10,6 +10,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 @Configuration
 @ComponentScan(basePackages = {"com.katus.aopanno"})
-@EnableAspectJAutoProxy   // 开启AspectJ自动生成代理对象
+@EnableAspectJAutoProxy   // 开启AspectJ自动生成代理对象(使用AspectJ编码风格)
 public class AopConfig {
 }
