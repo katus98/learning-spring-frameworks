@@ -1,15 +1,17 @@
 package com.katus.aopanno;
 
-import org.springframework.stereotype.Component;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 被代理类
  * @author SUN Katus
  * @version 1.0, 2020-08-26
  */
-@Component
-public class User {
+@Slf4j
+public class User implements Person {
+    @MyAsp
+    @Override
     public void add() {
-        System.out.println("add...");
+        log.info("add...");
     }
 }

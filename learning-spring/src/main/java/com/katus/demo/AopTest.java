@@ -1,5 +1,6 @@
 package com.katus.demo;
 
+import com.katus.aopanno.Person;
 import com.katus.aopanno.User;
 import com.katus.config.AopConfig;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ public class AopTest {
     public void test1() {
         // 加载Spring配置文件
         ApplicationContext context =
-                new FileSystemXmlApplicationContext("D:\\Codes\\Learning\\spring-learning\\src\\main\\resources\\beanAop.xml");
+                new FileSystemXmlApplicationContext("classpath:beanAop.xml");
         context.getBean("user", User.class).add();
     }
 
@@ -25,5 +26,12 @@ public class AopTest {
         // 加载Spring配置文件
         ApplicationContext context = new AnnotationConfigApplicationContext(AopConfig.class);
         context.getBean("user", User.class).add();
+    }
+
+    @Test
+    public void testXML() {
+        ApplicationContext context =
+                new FileSystemXmlApplicationContext("classpath:realAop.xml");
+        ((Person) context.getBean("user")).add();
     }
 }
