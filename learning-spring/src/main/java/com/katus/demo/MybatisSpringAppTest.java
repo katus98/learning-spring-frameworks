@@ -1,7 +1,10 @@
 package com.katus.demo;
 
+import com.katus.bean.my.User;
+import com.katus.config.MyAdvancedMybatisConfig;
 import com.katus.config.MybatisConfig;
 import com.katus.dao.ModelClassDao;
+import com.katus.mapper.UserMapper;
 import com.katus.service.ModelClassService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -69,6 +72,18 @@ public class MybatisSpringAppTest {
          */
         ModelClassService service = context.getBean(ModelClassService.class);
         log.info("{}", service.queryAll());
+        context.close();
+    }
+
+    /**
+     * 一个自定义实现的Mybatis注解扫描
+     */
+    @Test
+    public void testMySpringMybatis() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyAdvancedMybatisConfig.class);
+        UserMapper userMapper = context.getBean(UserMapper.class);
+        User user = userMapper.selectUserById(1L);
+        log.info("User Id 1 : [{}]", user);
         context.close();
     }
 }

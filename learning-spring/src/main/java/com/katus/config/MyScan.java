@@ -3,6 +3,7 @@ package com.katus.config;
 import com.katus.processor.MyImportBeanDefinitionRegistrar;
 import org.springframework.context.annotation.Import;
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
@@ -14,6 +15,7 @@ import java.lang.annotation.RetentionPolicy;
  */
 @Import(MyImportBeanDefinitionRegistrar.class)
 @Retention(RetentionPolicy.RUNTIME)
+@Documented
 public @interface MyScan {
-    String value() default "";
+    String value();
 }

@@ -12,6 +12,7 @@
         <module>learning-spring</module>
         <module>learning-spring-mvc</module>
         <module>learning-spring-boot</module>
+        <module>learning-mybatis</module>
     </modules>
 
     <properties>
