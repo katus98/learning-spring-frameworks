@@ -4,6 +4,7 @@ import com.katus.bean.Book;
 import com.katus.bean.Emp;
 import com.katus.bean.User;
 import com.katus.bean.life.BeanLife;
+import com.katus.bean.life.JoinPoint;
 import com.katus.config.SpringLifeConfig;
 import com.katus.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -93,6 +94,8 @@ public class SpringTest {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringLifeConfig.class);
         BeanLife beanLife = context.getBean(BeanLife.class);
         log.info("{}-using......", beanLife.getClass());
+        JoinPoint joinPoint = (JoinPoint) context.getBean("joinPoint");
+        joinPoint.join();
         context.close();
     }
 }

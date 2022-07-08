@@ -18,42 +18,42 @@ public class BeanLife implements InitializingBean, BeanNameAware, BeanClassLoade
     private Member member;
 
     public BeanLife() {
-        log.info("{}-Construction", this.getClass());
+        log.info("{}-Construction()", this.getClass());
     }
 
     @Autowired
     public void setMember(Member member) {
-        log.info("{}-setMember", this.getClass());
+        log.info("{}-setMember()", this.getClass());
         this.member = member;
     }
 
     @Override
     public void setBeanClassLoader(ClassLoader classLoader) {
-        log.info("{}-setBeanClassLoader", this.getClass());
+        log.info("{}-setBeanClassLoader()", this.getClass());
     }
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        log.info("{}-setBeanFactory", this.getClass());
+        log.info("{}-setBeanFactory()", this.getClass());
     }
 
     @Override
     public void setBeanName(String name) {
-        log.info("{}-setBeanName", this.getClass());
+        log.info("{}-setBeanName()", this.getClass());
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        log.info("{}-setApplicationContext", this.getClass());
+        log.info("{}-setApplicationContext()", this.getClass());
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        log.info("{}-afterPropertiesSet", this.getClass());
+        log.info("{}-afterPropertiesSet()", this.getClass());
     }
 
     @Override
     public void destroy() throws Exception {
-        log.info("{}-destroy", this.getClass());
+        log.info("{}-destroy()", this.getClass());
     }
 }

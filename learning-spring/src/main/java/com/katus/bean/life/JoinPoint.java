@@ -5,12 +5,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author SUN Katus
- * @version 1.0, 2022-07-08
+ * @version 1.0, 2022-07-09
  */
 @Component
 @Slf4j
-public class Member {
-    public Member() {
-        log.info("{}-Construction()", this.getClass());
+public class JoinPoint {
+    public void join() {
+        log.info("{}-join()", this.getClass());
     }
 }
