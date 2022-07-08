@@ -25,8 +25,8 @@ public class MybatisConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUsername("root");
-        dataSource.setPassword("gislab123");
+        dataSource.setUsername("?");
+        dataSource.setPassword("?");
         dataSource.setUrl("jdbc:mysql://47.97.32.160:10010/disaster?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8");
         return dataSource;
     }
