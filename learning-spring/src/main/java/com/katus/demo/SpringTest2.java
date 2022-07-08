@@ -5,7 +5,7 @@ import com.katus.service.TradeService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author SUN Katus
@@ -15,8 +15,7 @@ public class SpringTest2 {
     @Test
     public void test1() {
         // 加载Spring配置文件
-        ApplicationContext context =
-                new FileSystemXmlApplicationContext("D:\\Codes\\spring-learning\\src\\main\\resources\\beanAnno.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:beanAnno.xml");
         context.getBean("tradeService", TradeService.class).start();
     }
 
