@@ -12,6 +12,10 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class MyBeanPostProcessor implements BeanPostProcessor {
+    public MyBeanPostProcessor() {
+        log.info("{}-Construction()", this.getClass());
+    }
+
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         log.info("beanName: [{}], {}-postProcessBeforeInitialization()", beanName, this.getClass());
