@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
-public class BeanLife implements InitializingBean, BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, ApplicationContextAware, DisposableBean {
+public class BeanLife implements InitializingBean, BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, ApplicationContextAware, DisposableBean, SmartInitializingSingleton {
     private Member member;
 
     public BeanLife() {
@@ -55,5 +55,10 @@ public class BeanLife implements InitializingBean, BeanNameAware, BeanClassLoade
     @Override
     public void destroy() throws Exception {
         log.info("{}-destroy()", this.getClass());
+    }
+
+    @Override
+    public void afterSingletonsInstantiated() {
+        log.info("{}-afterSingletonsInstantiated()", this.getClass());
     }
 }

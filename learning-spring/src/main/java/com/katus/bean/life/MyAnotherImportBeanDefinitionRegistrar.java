@@ -12,13 +12,15 @@ import org.springframework.core.type.AnnotationMetadata;
  */
 @Slf4j
 public class MyAnotherImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+    public MyAnotherImportBeanDefinitionRegistrar() {
+        log.info("{}-Construction()", this.getClass());
+    }
+
+    /**
+     * 有两个方法, 只实现一个才会生效, 否则只会生效参数多的这个
+     */
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry, BeanNameGenerator importBeanNameGenerator) {
         log.info("{}-registerBeanDefinitions() withBeanNameGenerator", this.getClass());
-    }
-
-    @Override
-    public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
-        log.info("{}-registerBeanDefinitions() withoutBeanNameGenerator", this.getClass());
     }
 }
